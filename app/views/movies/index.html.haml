@@ -4,9 +4,9 @@
 %table#movies
   %thead
     %tr
-      %th Movie Title
-      %th Rating
-      %th Release Date
+      %th{ :class => ('active-sort' if @sortBy == :title) }= link_to 'Movie Title', movies_path(:sortBy => :title)
+      %th{ :class => ('active-sort' if @sortBy == :rating) }= link_to 'Rating', movies_path(:sortBy => :rating) 
+      %th{ :class => ('active-sort' if @sortBy == :release_date) }= link_to 'Release Date', movies_path(:sortBy => :release_date)
       %th More Info
   %tbody
     - @movies.each do |movie|

@@ -7,7 +7,11 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+
+    @movies = Movie.where("1").order(params[:sortBy])
+
+    @sortBy = params[:sortBy].to_sym
+
   end
 
   def new
