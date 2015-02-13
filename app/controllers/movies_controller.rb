@@ -8,21 +8,21 @@ class MoviesController < ApplicationController
 
   def index
 
-    # if (session[:movie_form_params])
-    #   if (params[:sortBy] == nil and session[:movie_form_params][:sortBy]) 
-    #     params[:sortBy] = session[:movie_form_params][:sortBy]
-    #     flash.keep
-    #     return redirect_to movies_path(params)
-    #   end
-    #   if (params[:ratings] == nil and session[:movie_form_params][:ratings]) 
-    #     params[:ratings] = session[:movie_form_params][:ratings]
-    #     flash.keep
-    #     return redirect_to movies_path(params)
-    #   end
-    # end
+    if (session[:movie_form_params])
+      if (params[:sortBy] == nil and session[:movie_form_params][:sortBy]) 
+        params[:sortBy] = session[:movie_form_params][:sortBy]
+        flash.keep
+        return redirect_to movies_path(params)
+      end
+      if (params[:ratings] == nil and session[:movie_form_params][:ratings]) 
+        params[:ratings] = session[:movie_form_params][:ratings]
+        flash.keep
+        return redirect_to movies_path(params)
+      end
+    end
 
 
-    # session[:movie_form_params] = {:sortBy => params[:sortBy],:ratings => params[:ratings]}
+    session[:movie_form_params] = {:sortBy => params[:sortBy],:ratings => params[:ratings]}
 
     # if (not (params[:ratings]) and session[:movie_form_ratings])
     #   params[:ratings] = session[:movie_form_ratings]
@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
     #redirect_to
     #session[:movie_form_ratings] = params[:ratings]
 
-    @query = Movie.where("1")
+    @query = Movie.where("")
     if (params[:sortBy]) 
       @sortBy = params[:sortBy].to_sym
       @query =  @query.order(@sortBy)
