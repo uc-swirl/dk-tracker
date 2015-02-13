@@ -8,9 +8,49 @@ class MoviesController < ApplicationController
 
   def index
 
-    @movies = Movie.where("1").order(params[:sortBy])
+    if (session[:movie_form_params])
+      if (params[:sortBy] == nil and session[:movie_form_params][:sortBy]) 
+        params[:sortBy] = session[:movie_form_params][:sortBy]
+        return redirect_to movies_path(params)
+      end
+      if (params[:ratings] == nil and session[:movie_form_params][:ratings]) 
+        params[:ratings] = session[:movie_form_params][:ratings]
+        return redirect_to movies_path(params)
+      end
+    end
+      puts  "HELLO"
+      puts   session[:movie_form_params]
+      puts  "TEST"
 
-    @sortBy = params[:sortBy].to_sym
+    session[:movie_form_params] = {:sortBy => params[:sortBy],:ratings => params[:ratings]}
+
+    # if (not (params[:ratings]) and session[:movie_form_ratings])
+    #   params[:ratings] = session[:movie_form_ratings]
+    #   #flash.keep
+    # end
+    #redirect_to
+    #session[:movie_form_ratings] = params[:ratings]
+
+    @query = Movie.where("1")
+    if (params[:sortBy]) 
+      @sortBy = params[:sortBy].to_sym
+      @query =  @query.order(@sortBy)
+    end
+
+    @rating_checkboxes = Hash.new
+      Movie.ratings.each { |rating|
+      @rating_checkboxes[rating] = not(params[:ratings])
+    }
+
+    if (params[:ratings]) 
+      @query = @query.where(:rating => params[:ratings].keys)
+      params[:ratings].each_pair { |rating, val|
+      @rating_checkboxes[rating] = true
+    }
+    end
+    @ratings_passthrough = params[:ratings]
+    @movies = @query
+    @all_ratings = Movie.ratings
 
   end
 
