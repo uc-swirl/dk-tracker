@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
-    	  {:title => 'The Terminator', :rating => 'R', :release_date => '26-Oct-1984'},
+movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992', :director => "Marco"},
+    	  {:title => 'The Terminator', :rating => 'R', :release_date => '26-Oct-1984', :director => "Marco"},
     	  {:title => 'When Harry Met Sally', :rating => 'R', :release_date => '21-Jul-1989'},
       	  {:title => 'The Help', :rating => 'PG-13', :release_date => '10-Aug-2011'},
       	  {:title => 'Chocolat', :rating => 'PG-13', :release_date => '5-Jan-2001'},
