@@ -5,11 +5,13 @@ describe User do
   	  #attr_accessor :name, :phone_number, :email, :password, :active
   	  ben = User.create(:username => "Ben", :firstname=> "Ben",:lastname => "Poodles",  :phone_number => "707-825-6858", 
   	  	:email => "marcojoemontagna@gmail.com", :password => "abcd", :active => true)
-  	  expect(User.find(:username => "Ben")).to be_truthy 
+  	  #expect { User.where(:username => "Ben").first }.to be_truthy
+          User.where(:username => "Ben").first.should be
   end
 
   it "Shouldn't find nonexistant users" do
-  	  expect { User.find(:username => "Ben")}.to raise_error
+    #expect { User.where(:username => "Ben").first }.to be_nil
+    User.where(:username => "Ben").first.should be_nil
   end
 
   it "Users should respond to #username" do

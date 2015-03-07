@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #attr_accessor :name, :phone_number, :email, :password, :active
+  attr_accessible :firstname, :lastname, :username, :phone_number, :email, :password, :active
 
 end
 
