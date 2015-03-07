@@ -5,9 +5,9 @@ Feature: login as volunteer
   I want to provide a login page
 
   Given the following volunteers exist:
-  | name       | phone_number   | email             | password    | Type (Admin or Volunteer)
-  | Joe Blow   | 867-5309       | jb@berkeley.edu   | 12345       | Volunteer
-  | Kay Nine   | 456-7890       | lilbjr@gmail.com  | #k_9        | Admin
+  | name       | phone_number   | email             | password    | Type (Admin or Volunteer) |
+  | Joe Blow   | 867-5309       | jb@berkeley.edu   | 12345       | Volunteer                 |
+  | Kay Nine   | 456-7890       | lilbjr@gmail.com  | #k_9        | Admin                     |
 
   Scenario: Login successfully as a Volunteer
     Given I am on the login page as Joe Blow
