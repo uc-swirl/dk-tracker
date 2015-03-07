@@ -1,2 +1,7 @@
 %h1 DK-tracking Form
-	
+
+%table
+  %tbody
+    - @stemplates.each do |fields|
+      %td= fields
+
