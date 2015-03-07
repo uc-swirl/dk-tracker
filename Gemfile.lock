@@ -177,6 +177,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.2.16)
+  rspec-expectations
   rspec-rails (~> 2.14.0)
   ruby-debug19
   sass-rails
