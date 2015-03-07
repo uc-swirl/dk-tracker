@@ -2,6 +2,7 @@
 
 %table
   %tbody
-    - @stemplates.each do |fields|
-      %td= fields
+    - @stemplates.each do |field|
+      %tr
+        %td= render field
 
