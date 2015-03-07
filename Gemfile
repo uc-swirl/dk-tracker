@@ -1,4 +1,4 @@
-source 'https://rubygems.org', 'gems.github.com'
+source 'https://rubygems.org'
 
 ruby '1.9.3'
 gem 'rails', '3.2.16'
@@ -14,6 +14,7 @@ group :development, :test do
   gem 'rspec-expectations'
   gem 'rspec-rails','~> 2.14.0'
   gem 'simplecov'
+  gem 'rake','~> 10.4.2'
 end
 
 
