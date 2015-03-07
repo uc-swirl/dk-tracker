@@ -1,4 +1,4 @@
-Rottenpotatoes::Application.routes.draw do
+Swirlysurvey::Application.routes.draw do
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
