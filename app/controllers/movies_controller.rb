@@ -6,6 +6,18 @@ class MoviesController < ApplicationController
     # will render app/views/movies/show.<extension> by default
   end
 
+  def similar
+	@similar = params['id']
+	@movie = Movie.find(params['id'])
+	if (not (@movie) or not(@movie.director) or @movie.director.empty? )
+		flash[:notice] = "'Alien' has no director info"
+		return redirect_to movies_path()
+	end
+
+	@movies = Movie.similar(@movie.director)
+	
+  end
+  
   def index
 
     if (session[:movie_form_params])
@@ -21,15 +33,7 @@ class MoviesController < ApplicationController
       end
     end
 
-
     session[:movie_form_params] = {:sortBy => params[:sortBy],:ratings => params[:ratings]}
-
-    # if (not (params[:ratings]) and session[:movie_form_ratings])
-    #   params[:ratings] = session[:movie_form_ratings]
-    #   #flash.keep
-    # end
-    #redirect_to
-    #session[:movie_form_ratings] = params[:ratings]
 
     @query = Movie.where("")
     if (params[:sortBy]) 
