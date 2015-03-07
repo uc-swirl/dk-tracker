@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://rubygems.org', 'gems.github.com'
 
 ruby '1.9.3'
 gem 'rails', '3.2.16'
@@ -33,3 +33,5 @@ end
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'validates_as_phone_number', '~> 0.7.5'
+

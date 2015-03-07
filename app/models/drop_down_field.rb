@@ -1,3 +1,3 @@
 class DropDownField < SurveyField
-  # attr_accessible :title, :body
+  has_many :dropdown_responses
 end

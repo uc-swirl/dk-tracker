@@ -1,3 +1,3 @@
 class TextQuestionField < SurveyField
-  # attr_accessible :title, :body
+  has_many :text_question_responses
 end
