@@ -1,3 +1,3 @@
 class PhoneField < SurveyField
-  # attr_accessible :title, :body
+  has_many :phone_responses
 end
