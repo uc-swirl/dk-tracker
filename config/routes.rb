@@ -1,12 +1,12 @@
 Swirlysurvey::Application.routes.draw do
   
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-
-  resources :surveytemplates
-
-
+  root to: 'home#index'
+  resources :survey_templates
 
 
   # Sample of regular route:

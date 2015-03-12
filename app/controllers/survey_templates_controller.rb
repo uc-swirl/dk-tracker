@@ -1,4 +1,4 @@
-class SurveytemplatesController < ApplicationController
+class SurveyTemplatesController < ApplicationController
 	def index
 		#@stemplates = SurveyTemplate.survey_fields
 		@stemplates = [1,2,3,4]
