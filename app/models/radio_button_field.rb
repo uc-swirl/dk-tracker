@@ -1,3 +1,3 @@
 class RadioButtonField < SurveyField
-  # attr_accessible :title, :body
+  has_many :radio_button_responses
 end

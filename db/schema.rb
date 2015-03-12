@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150307031015) do
+ActiveRecord::Schema.define(:version => 20150307184740) do
+
+  create_table "field_responses", :force => true do |t|
+    t.integer  "survey_field_id"
+    t.integer  "submission_id"
+    t.string   "response"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "movies", :force => true do |t|
+    t.string   "title"
+    t.datetime "release_date"
+    t.string   "rating"
+    t.text     "description"
+    t.string   "director"
+  end
+
+  create_table "submissions", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "survey_fields", :force => true do |t|
     t.string   "type"
@@ -31,6 +52,9 @@ ActiveRecord::Schema.define(:version => 20150307031015) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "username"
     t.string   "phone_number"
     t.string   "email"
     t.string   "password"

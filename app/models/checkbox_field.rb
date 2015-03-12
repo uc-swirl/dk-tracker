@@ -1,3 +1,3 @@
 class CheckboxField < SurveyField
-  # attr_accessible :title, :body
+  has_many :checkbox_responses
 end

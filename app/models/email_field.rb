@@ -1,5 +1,5 @@
 class EmailField < SurveyField
-  # attr_accessible :title, :body
+  has_many :email_responses
 end
 
 

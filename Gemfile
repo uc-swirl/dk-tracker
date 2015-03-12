@@ -9,11 +9,9 @@ group :development, :test do
   gem 'sqlite3'
   gem 'ruby-debug19'
   gem 'rspec-rails', '~> 2.14.0'
-  gem 'database_cleaner'
-  gem 'cucumber-rails', :require => false
   gem 'rspec-expectations'
-  gem 'rspec-rails','~> 2.14.0'
   gem 'simplecov'
+  gem 'rake','~> 10.4.2'
 end
 
 
@@ -26,10 +24,10 @@ group :assets do
   gem 'coffee-rails'
   gem 'sass-rails'
   gem 'therubyracer'
-  gem 'therubyracer'
-  gem 'sass-rails'
-  gem 'coffee-rails'
+
 end
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'validates_as_phone_number', '~> 0.7.5'
+

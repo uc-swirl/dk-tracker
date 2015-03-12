@@ -1,3 +1,3 @@
 class NameField < SurveyField
-  # attr_accessible :title, :body
+  has_many :name_responses
 end
