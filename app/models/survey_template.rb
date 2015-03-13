@@ -1,5 +1,6 @@
 class SurveyTemplate < ActiveRecord::Base
   #has_many :survey_fields
+  attr_accessor :name_fields
   has_many :name_fields
   has_many :checkbox_fields
   has_many :phone_fields
