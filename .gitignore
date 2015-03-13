@@ -16,5 +16,7 @@
 .idea/
 
 # coverage spec
-/coverage/.*
+/coverage/*
 
+
+Gemfile.lock

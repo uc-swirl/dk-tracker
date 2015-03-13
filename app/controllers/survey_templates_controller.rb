@@ -1,23 +1,4 @@
 class SurveyTemplatesController < ApplicationController
-	def index
-		#@stemplates = SurveyTemplate.survey_fields
-		@stemplates = [1,2,3,4]
-	end
-
-	def show
-		id = params[:id]
-		#@stemplates = SurveyTemplate.find(id).survey_fields
-		@stemplates = [1,2,3,4]
-	end
-
-	def new
-
-	end
-
-	def create
-		SurveyTemplate.create!(params[:survey_template])
-		flash[:notice] = "Form was successfully submitted."
-		redirect_to survey_templates_path
-	end
+	
 end
 

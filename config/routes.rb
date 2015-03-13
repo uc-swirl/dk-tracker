@@ -5,9 +5,15 @@ Swirlysurvey::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  root to: 'home#index'
+  root to: "submissions#index"
   resources :survey_templates
   resources :submissions
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
+  end
+
+  match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

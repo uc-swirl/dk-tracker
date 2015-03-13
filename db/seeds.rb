@@ -22,6 +22,7 @@
 #  Movie.create!(movie)
 #end
 
+<<<<<<< HEAD
 
 s = SurveyTemplate.create
 s.text_question_fields.build(:question_title => "Name:")
@@ -34,3 +35,6 @@ s.text_question_fields.build(:question_title => "My bus lines:")
 s.text_question_fields.build(:question_title => "Main bus issues:")
 s.save!
 
+=======
+SurveyTemplates
+>>>>>>> 30e69a9b250f13d7e5ca613245a4369199055282

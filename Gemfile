@@ -14,8 +14,9 @@ group :development, :test do
   gem 'rake','~> 10.4.2'
   gem 'devise'
   gem 'autotest-rails'
-end
+  gem "factory_girl_rails", "~> 4.0"
 
+end
 
 group :production do
   gem 'pg'
@@ -32,4 +33,5 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'validates_as_phone_number', '~> 0.7.5'
+gem 'devise'
 

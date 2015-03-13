@@ -17,7 +17,7 @@
         = "Logged in as #{current_user.email}"
         = link_to 'Edit profile', edit_user_registration_path
         = link_to 'Logout', destroy_user_session_path, method: :delete
-      - else
+      - elsif !(current_page?(new_user_session_path) or current_page?(new_user_registration_path))
         = link_to 'sign_up', new_user_registration_path
         = link_to 'Login', new_user_session_path
       = yield
