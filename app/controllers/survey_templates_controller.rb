@@ -19,3 +19,4 @@ class SurveyTemplatesController < ApplicationController
 		redirect_to survey_templates_path
 	end
 end
+
