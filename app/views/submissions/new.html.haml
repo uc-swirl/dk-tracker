@@ -1,0 +1,9 @@
+%h1 New Form
+
+= form_tag survey_templates_path do
+
+  = label :survey_template, :name_field, 'Name'
+  = text_field :survey_template, 'name_responses'
+
+  %div
+  = submit_tag 'Submit'

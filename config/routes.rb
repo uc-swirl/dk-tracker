@@ -5,7 +5,7 @@ Swirlysurvey::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  root to: "survey_templates#index"
+  root to: "submissions#index"
   resources :survey_templates
   resources :submissions
 
