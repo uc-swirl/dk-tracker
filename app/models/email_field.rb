@@ -1,6 +1,10 @@
 class EmailField < SurveyField
-  has_many :email_responses
+
+  def is_valid?(response)
+    if not EmailValidator.valid?(response)
+      errors.add(:email, "is not a valid email")
+    end
+  end
+
 end
-
-
 

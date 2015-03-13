@@ -1,15 +1,9 @@
 class SubmissionsController < ApplicationController
   def index
-    @submissions = Submission.all
-    if !(user_signed_in?)
-      redirect_to new_user_session_path
-    end
   end
   def new
-    @fields = SurveyTemplate.first.survey_fields
   end
   def create
-    #@responses = []
     s = Submission.create
     params[:submission].each do |submission|
       id = SurveyField.find_the_id(submission[0])
@@ -17,10 +11,8 @@ class SubmissionsController < ApplicationController
       response.survey_field_id = id
       response.submission_id = s.id
       response.save!
-      #@responses.push(SurveyField.find_the_id(submission[0]))
-      #@responses.push(submission[1])
     end
     flash[:notice] = "Your submission was recorded."
-    redirect_to submissions_path
+    redirect_to survey_templates_path
   end 
 end

@@ -10,7 +10,7 @@ class SubmissionsController < ApplicationController
       response = FieldResponse.create(:response => submission[1])
       response.survey_field_id = id
       response.submission_id = s.id
-      response.save!
+      response.save
     end
     flash[:notice] = "Your submission was recorded."
     redirect_to survey_templates_path
