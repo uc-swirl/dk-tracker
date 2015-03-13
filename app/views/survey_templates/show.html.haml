@@ -1,3 +1,11 @@
 - # this is show view for the SurveyTemplate model views/survey_template/show.html.haml
 
-%h2 This will show a SurveyTemplate
+%h2 Submit a survey
+
+= form_tag submissions_path do
+  - @fields.each do |field|
+    = label :submission, field.question_title, field.question_title
+    = text_field :submission, field.question_title
+    - # hidden_field :submission, survey_field_id: field.id 
+  <br>  
+  = submit_tag 'Save Changes'

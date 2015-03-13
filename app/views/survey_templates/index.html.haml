@@ -1,10 +1,11 @@
 %h1 DK-tracking Form
 
-%table#movies
+%table#forms
   %thead
     %tr
-      %th Forms
+      %th= "Forms"
   %tbody
-    %tr
-      %th= link_to "Template 1", new_survey_template_path
+    - @templates.each do |template|
+      %tr
+        %td= link_to "Template" + template.id.to_s, survey_template_path(template)
 
