@@ -12,8 +12,8 @@ group :development, :test do
   gem 'rspec-expectations'
   gem 'simplecov'
   gem 'rake','~> 10.4.2'
+  gem "factory_girl_rails", "~> 4.0"
 end
-
 
 group :production do
   gem 'pg'
