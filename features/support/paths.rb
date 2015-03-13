@@ -13,16 +13,11 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
-    when /^the movies page$/ then '/movies'
-    when /^the edit page for "(.*)"$/ then edit_movie_path(Movie.find_by_title($1))
-    
-    when /^the details page for "(.*)"$/ then movie_path(Movie.find_by_title($1))
-
     when /^the Similar Movies page for "(.*)"$/ then similar_path(Movie.find_by_title($1))
 
-    when /^the admin dashboard$/ then '/admin'
+    when /^the admin dashboard$/ then dashboard_path
 
+    when /^admin login$/ then dashboard_login_path
 
 		
     # Add more mappings here.
