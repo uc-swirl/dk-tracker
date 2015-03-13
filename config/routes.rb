@@ -8,6 +8,10 @@ Swirlysurvey::Application.routes.draw do
   root to: "submissions#index"
   resources :survey_templates
   resources :submissions
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
+  end
 
   match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
 

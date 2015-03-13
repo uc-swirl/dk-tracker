@@ -21,3 +21,5 @@
 #movies.each do |movie|
 #  Movie.create!(movie)
 #end
+
+SurveyTemplates
