@@ -12,7 +12,6 @@ group :development, :test do
   gem 'rspec-expectations'
   gem 'simplecov'
   gem 'rake','~> 10.4.2'
-  gem 'devise'
   gem 'autotest-rails'
   gem "factory_girl_rails", "~> 4.0"
 
