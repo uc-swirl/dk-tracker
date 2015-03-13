@@ -12,7 +12,7 @@ Feature: Admin Dashboard
 
   Scenario: I should not be able to go to the admin dashboard if I'm not logged in as an admin
     Given I am on the admin dashboard
-    Then I should be redirected to "admin login"
+    Then I should be redirected to admin login
 
   Scenario: I should see links to available admin actions.
     Given I have logged in as ben@poodles.com with password 123password
