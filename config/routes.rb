@@ -13,6 +13,8 @@ Swirlysurvey::Application.routes.draw do
     get "/logout" => "devise/sessions#destroy"
   end
 
+  match 'volunteer', :to => "submissions#index", :format => false, :as => :volunteer #perhaps just a placeholder
+
   match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
 
   match 'admin/login', :to => 'dashboard#login', :format => false, :as => :dashboard_login

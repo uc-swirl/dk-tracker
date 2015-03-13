@@ -12,7 +12,7 @@ Given /^(?:|I )have logged in as (.+) with password (.+)$/ do |email, password|
   visit path_to("the admin dashboard")
   fill_in("user_email", :with => email)
   fill_in("user_password", :with => password)
-  click_button("commit")
+  click_button("Sign in")
 end
 
 Then /^there should be some links to admin actions$/ do
