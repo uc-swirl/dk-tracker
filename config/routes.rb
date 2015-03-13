@@ -15,6 +15,8 @@ Swirlysurvey::Application.routes.draw do
 
   match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
 
+  match 'admin/login', :to => 'dashboard#login', :format => false, :as => :dashboard_login
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
