@@ -12,7 +12,6 @@ group :development, :test do
   gem 'rspec-expectations'
   gem 'simplecov'
   gem 'rake','~> 10.4.2'
-  gem 'devise'
 end
 
 
@@ -31,4 +30,5 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'validates_as_phone_number', '~> 0.7.5'
+gem 'devise'
 
