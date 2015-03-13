@@ -11,11 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150313002123) do
+ActiveRecord::Schema.define(:version => 20150313053458) do
 
   create_table "field_responses", :force => true do |t|
+    t.string   "response"
     t.integer  "survey_field_id"
-    t.integer  "submissions_id"
+    t.integer  "submission_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

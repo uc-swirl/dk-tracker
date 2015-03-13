@@ -21,3 +21,16 @@
 #movies.each do |movie|
 #  Movie.create!(movie)
 #end
+
+
+s = SurveyTemplate.create
+s.text_question_fields.build(:question_title => "Name:")
+s.phone_fields.build(:question_title => "Phone:")
+s.email_fields.build(:question_title => "Email:")
+s.text_question_fields.build(:question_title => "Address:")
+s.text_question_fields.build(:question_title => "City:")
+s.text_question_fields.build(:question_title => "Zip:")
+s.text_question_fields.build(:question_title => "My bus lines:")
+s.text_question_fields.build(:question_title => "Main bus issues:")
+s.save!
+

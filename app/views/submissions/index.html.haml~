@@ -1,0 +1,8 @@
+- # in app/views/submissions_controller/index.html.haml
+
+%h2 Show response?
+
+- @submissions.each do |submission|
+  - submission.field_responses.each do |response|
+    = response.response
+

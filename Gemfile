@@ -13,6 +13,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'rake','~> 10.4.2'
   gem 'devise'
+  gem 'autotest-rails'
 end
 
 
