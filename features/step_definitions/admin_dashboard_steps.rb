@@ -15,11 +15,11 @@ Given /^(?:|I )have logged in as (.+) with password (.+)$/ do |email, password|
 end
 
 Then /^there should be some links to admin actions$/ do
-  page.should has_css(".admin_links")
+  expect(page.has_css?(".admin_links")).to be true
 end
 
 Then /^(?:|I )should see links to admin actions$/ do
-  page.should has_css(".admin_links")
+  expect(page.has_css?(".admin_links")).to be true 
 end
 
 
