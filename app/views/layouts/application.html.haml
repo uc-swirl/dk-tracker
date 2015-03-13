@@ -1,17 +1,23 @@
 !!! 5
 %html
   %head
-    %title Rotten Potatoes!
+    %title DK Tracker
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
   %body
-    %h1.title Rotten Potatoes!
+    %h1.title DK Tracker
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
       - elsif flash[:warning]
         #warning.message= flash[:warning]
-
+      - if user_signed_in?
+        = "Logged in as #{current_user.email}"
+        = link_to 'Edit profile', edit_user_registration_path
+        = link_to 'Logout', destroy_user_session_path, method: :delete
+      - elsif !(current_page?(new_user_session_path) or current_page?(new_user_registration_path))
+        = link_to 'sign_up', new_user_registration_path
+        = link_to 'Login', new_user_session_path
       = yield
