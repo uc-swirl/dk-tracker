@@ -9,7 +9,6 @@ Given /the following users exist/ do |user_table|
 end
 
 Given /^(?:|I )have logged in as (.+) with password (.+)$/ do |email, password|
-  visit path_to("the admin dashboard")
   fill_in("user_email", :with => email)
   fill_in("user_password", :with => password)
   click_button("Sign in")
@@ -33,8 +32,7 @@ Then /^(?:|I )should be redirected to (.+)$/ do |page_name|
   end
 end
 
-
-Then /^Then I should not be logged in$/ do 
+Then /^I should not be logged in$/ do 
   visit path_to("the admin dashboard")
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should
