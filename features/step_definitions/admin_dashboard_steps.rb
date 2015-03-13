@@ -23,12 +23,20 @@ Then /^(?:|I )should see links to admin actions$/ do
 end
 
 
-Then /^(?:|I )should be redirected to (.+)$/ do |page_name|
+Then /^(?:|I )should( not)? be (?:re)?directed to (.+)$/ do |negate, page_name|
   current_path = URI.parse(current_url).path
-  if current_path.respond_to? :should
-    current_path.should == path_to(page_name)
-  else
-    assert_equal path_to(page_name), current_path
+  if (negate == " not") 
+    if current_path.respond_to? :should
+      current_path.should_not == path_to(page_name)
+    else
+      assert_not_equal path_to(page_name), current_path
+    end
+  else 
+    if current_path.respond_to? :should
+      current_path.should == path_to(page_name)
+    else
+      assert_equal path_to(page_name), current_path
+    end
   end
 end
 

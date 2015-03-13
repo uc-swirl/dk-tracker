@@ -14,8 +14,8 @@ Feature: login as volunteer
   Scenario: Login successfully as a Volunteer
     Given I am on the volunteer login page
     And I have logged in as alex@incredible.com with password password123
-    Then I should be directed to the Volunteer page
-    And I should not be directed to the Admin page
+    Then I should be directed to the volunteer dashboard
+    And I should not be directed to the admin dashboard
 
   Scenario: Login unsuccessfully as a Volunteer
     Given I am on the volunteer login page
@@ -25,6 +25,6 @@ Feature: login as volunteer
 
   Scenario: Login successfully as Admin
     Given I am on the admin login page
-    And I have logged in as alex@incredible.com with password password123
-    Then I should be directed to the Admin page
-    And I should not be directed to the Volunteer page
+    And I have logged in as ben@poodles.com with password 123password
+    Then I should be directed to the admin dashboard
+    And I should not be directed to the volunteer dashboard
