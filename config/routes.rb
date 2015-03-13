@@ -9,8 +9,7 @@ Swirlysurvey::Application.routes.draw do
   resources :survey_templates
   resources :submissions
 
-  match '/admin/' => 'Dashboard#index'
-
+  match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
