@@ -7,6 +7,7 @@ class VolunteerDashboardController < ApplicationController
     end
 
     def index
+      @templates = current_user.surveyTemplates
     end
 
     def login
