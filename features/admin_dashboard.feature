@@ -6,7 +6,7 @@ Feature: Admin Dashboard
 
   Background:
     Given the following users exist:
-    | firstname | lastname    | phone_number   | email               | admin | password |
+    | firstname | lastname    | phone_number   | email               | admin | password       |
     | Alex      | Lin         | 17072238447    | alex@incredible.com | false | password123    |
     | Ben       | Luu         | 17072238442    | ben@poodles.com     | true  | 123password    |
 

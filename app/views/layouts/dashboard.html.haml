@@ -3,10 +3,17 @@
   %head
     %title DK Tracker Dashboard
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'dashboard'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
   %body
-    %h1.title DK Tracker Dashboard
+    %nav.nav
+      %ul
+        %li
+          = link_to "Test 1", "/test1"
+        %li
+          = link_to "Test 2", "/test2"
+
     #main
       = yield
