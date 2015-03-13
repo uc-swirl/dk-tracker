@@ -1,4 +1,3 @@
 class Submission < ActiveRecord::Base
-  belongs_to :survey_template
-  has_many :field_responses
+  attr_accessor :name, :phone, :email, :address, :city, :zip, :bus, :issue, :transfer_system, :clipper, :destination,
 end
