@@ -11,7 +11,7 @@ describe SurveyTemplatesController do
       expect(response).to render_template("show")	
     end
     it 'looks for the template\'s survey fields' do
-      SurveyTemplate.should_receive(:find).with("1").and_return(@st)  
+      SurveyTemplate.should_receive(:find).with(@st.id.to_s).and_return(@st)  
       get :show, :id => @st.id
     end
   end
