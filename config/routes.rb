@@ -5,7 +5,7 @@ Swirlysurvey::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  root to: "submissions#index"
+  root :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
   resources :survey_templates
   resources :submissions
   devise_scope :user do
