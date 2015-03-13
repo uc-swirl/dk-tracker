@@ -11,9 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20150307031015) do
-=======
 ActiveRecord::Schema.define(:version => 20150313053458) do
 
   create_table "field_responses", :force => true do |t|
@@ -29,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20150313053458) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
->>>>>>> 48574678687f9c4b54b8714ac46e50cac6823eed
 
   create_table "survey_fields", :force => true do |t|
     t.string   "type"
@@ -48,17 +44,6 @@ ActiveRecord::Schema.define(:version => 20150313053458) do
   end
 
   create_table "users", :force => true do |t|
-<<<<<<< HEAD
-    t.string   "name"
-    t.string   "phone_number"
-    t.string   "email"
-    t.string   "password"
-    t.boolean  "active"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-=======
     t.string   "firstname"
     t.string   "lastname"
     t.string   "username"
@@ -82,5 +67,4 @@ ActiveRecord::Schema.define(:version => 20150313053458) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
->>>>>>> 48574678687f9c4b54b8714ac46e50cac6823eed
 end
