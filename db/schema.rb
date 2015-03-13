@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150313002123) do
+ActiveRecord::Schema.define(:version => 20150313031638) do
 
   create_table "field_responses", :force => true do |t|
     t.integer  "survey_field_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20150313002123) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
