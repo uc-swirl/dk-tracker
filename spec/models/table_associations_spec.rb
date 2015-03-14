@@ -14,18 +14,22 @@ describe "Tables are associated correctly" do
     @s2 = Submission.create
     @s2.survey_template_id = @t.id
     
-    @r1 = FieldResponse.create(:response => "Alex")
+    @r1 = FieldResponse.new(:response => "Alex")
     @r1.submission_id = @s1.id
     @r1.survey_field_id = @q1.id
-    @r2 = FieldResponse.create(:response => "Marco")
-    @r1.submission_id = @s2.id
+    @r1.save  
+    @r2 = FieldResponse.new(:response => "Marco")
+    @r2.submission_id = @s2.id
     @r2.survey_field_id = @q2.id
-    @r3 = FieldResponse.create(:response => "dluu@gmail.com")
+    @r2.save
+    @r3 = FieldResponse.new(:response => "dluu@gmail.com")
     @r3.submission_id = @s1.id
     @r3.survey_field_id = @q1.id
-    @r4 = FieldResponse.create(:response => "mabinogiben@gmail.com")
+    @r3.save
+    @r4 = FieldResponse.new(:response => "mabinogiben@gmail.com")
     @r4.submission_id = @s2.id
     @r4.survey_field_id = @q2.id   
+    @r4.save
     
   end
   it "template can access its fields" do

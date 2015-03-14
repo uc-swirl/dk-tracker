@@ -1,3 +1,5 @@
 class TextQuestionField < SurveyField
-  has_many :text_question_responses
+  def is_valid? (response)
+    true
+  end
 end
