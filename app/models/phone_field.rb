@@ -5,7 +5,7 @@ class PhoneField < SurveyField
     ten = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/ 
     empty = /^$/
     if not (response =~ seven or response =~ one or response =~ ten or response =~ empty)
-      error.add(:phone, "is not a valid phone number")
+      errors.add(:phone, "is not a valid phone number")
     end
   end
 end

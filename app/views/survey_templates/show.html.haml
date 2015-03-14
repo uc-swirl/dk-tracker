@@ -4,8 +4,7 @@
 
 = form_tag submissions_path do
   - @fields.each do |field|
-    = label :submission, field.question_title, field.question_title
-    = text_field :submission, field.question_title
-    - # hidden_field :submission, survey_field_id: field.id 
+    = label :submission, field.id, field.question_title
+    = text_field :submission, field.id
   <br>  
   = submit_tag 'Save Changes'

@@ -5,7 +5,7 @@ Swirlysurvey::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  root to: "submissions#index"
+  root :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
   resources :survey_templates
   resources :submissions
   devise_scope :user do
@@ -13,7 +13,10 @@ Swirlysurvey::Application.routes.draw do
     get "/logout" => "devise/sessions#destroy"
   end
 
-  match 'volunteer', :to => "submissions#index", :format => false, :as => :volunteer #perhaps just a placeholder
+  match 'volunteer', :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
+
+  match 'volunteer/login', :to => "volunteer_dashboard#login", :format => false, :as => :volunteer_login #perhaps just a placeholder
+
 
   match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
 

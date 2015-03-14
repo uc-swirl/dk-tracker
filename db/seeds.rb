@@ -27,6 +27,6 @@ s.text_question_fields.build(:question_title => "Favourite colour:")
 s.text_question_fields.build(:question_title => "Speed of a diving swallowtail:")
 s.save!
 
-User.create!(:email => "marcojoemontagna@gmail.com", :password => "12345678", :password_confirmation => "12345678", :admin => true)
-User.create!(:email => "mm999223@gmail.com", :password => "12345678", :password_confirmation => "12345678", :admin => false)
+User.create!(:email => "m.arcojoemontagna@gmail.com", :password => "12345678", :password_confirmation => "12345678", :admin => true)
+User.create!(:email => "m.m999223@gmail.com", :password => "12345678", :password_confirmation => "12345678", :admin => false)
 

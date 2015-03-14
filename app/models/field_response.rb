@@ -6,7 +6,7 @@ class FieldResponse < ActiveRecord::Base
   validate :response_format
 
   def response_format
-    response.survey_field.is_valid?(response.response)
+    self.survey_field.is_valid?(self.response)
     
   end
   

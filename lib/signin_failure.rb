@@ -1,5 +1,6 @@
 class SigninFailure < Devise::FailureApp
   def redirect_url
+    flash[:notice] = "Username or Password incorrect"
     if (request.referer) 
       request.referer
     else

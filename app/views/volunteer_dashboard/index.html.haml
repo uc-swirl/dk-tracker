@@ -1,0 +1,11 @@
+%h1 Survey Palooza 
+
+%table#forms
+  %thead
+    %tr
+      %th= "Forms"
+  %tbody
+    - @templates.each do |template|
+      %tr
+        %td= link_to "Template" + template.id.to_s, survey_template_path(template)
+
