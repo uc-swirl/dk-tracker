@@ -1,4 +1,12 @@
- 
+
+ Then /"(.+)" should( not)? be a user$/ do  |email, negate|
+  if (negate == " not") 
+    User.find_by_email(email).should be nil
+  else
+    User.find_by_email(email).should_not be nil
+  end
+end
+
 Given /the following users exist/ do |user_table|
   user_table.hashes.each do |user|
     #    | firstname | lastname    | phone_number   | email               | admin | password |

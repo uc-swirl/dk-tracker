@@ -19,6 +19,8 @@ Swirlysurvey::Application.routes.draw do
 
 
   match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
+  match 'admin/add_user', :to => 'dashboard#add_user', :format => false, :as => :admin_add_user
+  match 'admin/create_user', :to => 'dashboard#create_user', :format => false, :as => :admin_create_user
 
   match 'admin/login', :to => 'dashboard#login', :format => false, :as => :dashboard_login
 
