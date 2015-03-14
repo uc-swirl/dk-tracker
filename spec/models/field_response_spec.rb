@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe FieldResponse do
+<<<<<<< HEAD
   it "should create a FieldResponse for a valid email response" do
     survey = SurveyTemplate.create
     field = survey.email_fields.build(:question_title => "Email:")
@@ -46,4 +47,8 @@ describe FieldResponse do
     submis.save
     submis.field_responses.where(survey_field_id: field.id).first.response.should eq "frootloops"
   end
+=======
+  it 'must be a valid phone number' 
+
+>>>>>>> f3eec3dc27937d785900b61cc7b181741f45289a
 end
