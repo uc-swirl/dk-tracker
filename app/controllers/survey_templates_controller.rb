@@ -3,7 +3,8 @@ class SurveyTemplatesController < ApplicationController
     @templates = SurveyTemplate.all
   end
   def show # shows the HTML form
-    @fields = SurveyTemplate.find(params[:id]).survey_fields    
+    @fields = SurveyTemplate.find(params[:id]).survey_fields
+    @id = params[:id]
   end
 
 end

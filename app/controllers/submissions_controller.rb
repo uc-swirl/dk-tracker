@@ -4,19 +4,25 @@ class SubmissionsController < ApplicationController
   def new
   end
   def create
-    submission = Submission.create
-    #arr = Array.new
-    #@thing = "" 
-    params[:submission].each_key do |key|
-      field = SurveyField.find(key)
-      answer = field.field_responses.build(:response => params[:submission][key])
-      answer.save
-      submission.field_responses << answer
-      answer.save
-      #@thing = @thing + " " + params[:submission][key].to_s + " " + params[:submission].to_s
+    template = SurveyTemplate.find(params[:template_id])
+    begin
+      #template = Template.find(params[:template_id])
+      submission = template.submissions.create!
+      params[:submission].each_key do |key|
+        field = SurveyField.find(key)
+        answer = field.field_responses.build(:response => params[:submission][key])
+        answer.save!
+        submission.field_responses << answer
+        answer.save!
+      end
+      flash[:notice] = "Your submission was recorded."
+      redirect_to survey_templates_path
+    rescue Exception => e
+      flash[:notice] = e.message
+      redirect_to survey_template_path(template.id)
     end
-    flash[:notice] = "Your submission was recorded."
-    redirect_to survey_templates_path
+
   end 
 end
+
 

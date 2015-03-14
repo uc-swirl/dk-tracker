@@ -2,7 +2,7 @@
 
 %h2 Submit a survey
 
-= form_tag submissions_path do
+= form_tag submissions_path :template_id => @id do
   - @fields.each do |field|
     = label :submission, field.id, field.question_title
     = text_field :submission, field.id

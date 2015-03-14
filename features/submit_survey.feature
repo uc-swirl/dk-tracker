@@ -19,8 +19,8 @@ Feature: submit a survey
   
   Scenario: Unsuccessfully fill out a survey
     Given I visit that survey's page
-      And I fill in the first field with "Hi"
-      And I fill in the next field with "not a phone number"
-      And I press submit
-      Then I should be on the survey templates page
-      And I should not see "Your submission was recorded."
+    And I fill in the first field with "Hi"
+    And I fill in the next field with "not a phone number"
+    And I press submit
+    Then I visit that survey's page
+    And I should not see "Your submission was recorded."
