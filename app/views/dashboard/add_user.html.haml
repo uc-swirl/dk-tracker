@@ -1,0 +1,15 @@
+%h1 Build me a user worthy of Mordor!
+
+= form_tag admin_create_user_path do
+  = label_tag 'Firstname'
+  = text_field_tag 'user[firstname]'
+  = label_tag 'lastname'
+  = text_field_tag 'user[lastname]'
+  = label_tag 'Email'
+  = text_field_tag 'user[email]'
+  = label_tag 'Admin?'
+  = check_box_tag 'user[admin]'
+  = label_tag 'password'
+  = text_field_tag 'user[password]'
+
+  %button Create
