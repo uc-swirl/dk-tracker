@@ -1,0 +1,9 @@
+class SurveyField < ActiveRecord::Base
+<<<<<<< HEAD
+  attr_accessible :question_title
+  belongs_to :survey_template
+=======
+  # attr_accessible :title, :body
+  
+>>>>>>> 04d54bf03ebf9fd0d0cd142efa1936947cbd7e7e
+end
