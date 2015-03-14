@@ -7,5 +7,6 @@ class SurveyTemplate < ActiveRecord::Base
   has_many :text_question_fields
   has_many :radio_button_fields
   has_many :email_fields
+  has_many :submissions
 
 end
