@@ -6,12 +6,14 @@ class SubmissionsController < ApplicationController
   def create
     submission = Submission.create
     #arr = Array.new
+    #@thing = "" 
     params[:submission].each_key do |key|
       field = SurveyField.find(key)
       answer = field.field_responses.build(:response => params[:submission][key])
-      #arr << value
-      #submission.field_responses << response
       answer.save
+      submission.field_responses << answer
+      answer.save
+      #@thing = @thing + " " + params[:submission][key].to_s + " " + params[:submission].to_s
     end
     flash[:notice] = "Your submission was recorded."
     redirect_to survey_templates_path
