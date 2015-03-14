@@ -1,5 +1,5 @@
 class TextQuestionField < SurveyField
   def is_valid? (response)
-    true
+    {:value => true}
   end
 end

@@ -1,54 +1,54 @@
 require 'spec_helper'
 
 describe FieldResponse do
-<<<<<<< HEAD
   it "should create a FieldResponse for a valid email response" do
     survey = SurveyTemplate.create
-    field = survey.email_fields.build(:question_title => "Email:")
-    submis = survey.submissions.build()
+    field = EmailField.create(:question_title => "Email:")
+    survey.survey_fields << field
+    submis = survey.submissions.build
     response = field.field_responses.build(:response => "saasbook@saasbook.com")
     submis.field_responses << response
     submis.save
-    submis.field_responses.where(survey_field_id: field.id).first.response.should eq "saasbook@saasbook.com"
+    Submission.find(submis.id).field_responses.where(survey_field_id: field.id).first.response.should eq "saasbook@saasbook.com"
   end
   it "should not create a FieldResponse if given an invalid email response" do
   	survey = SurveyTemplate.create
-    field = survey.email_fields.build(:question_title => "Email:")
+    field = EmailField.create(:question_title => "Email2:")
+    survey.survey_fields << field
     submis = survey.submissions.build()
+    submis.save
     response = field.field_responses.build(:response => "saasbook")
     submis.field_responses << response
-    submis.save
-    submis.field_responses.should be [] #be_empty
+    expect {response.save!}.to raise_error(ActiveRecord::RecordInvalid,'Validation failed: Email is not valid email')
   end
   it "should create a FieldResponse for a valid phone number response" do
     survey = SurveyTemplate.create
-    field = survey.phone_fields.build(:question_title => "Phone Number:")
+    field = PhoneField.create(:question_title => "Phone Number:")
+    survey.survey_fields << field
     submis = survey.submissions.build()
     response = field.field_responses.build(:response => "1234567890")
     submis.field_responses << response
     submis.save
-    submis.field_responses.where(survey_field_id: field.id).first.response.should eq "1234567890"
+    Submission.find(submis.id).field_responses.where(survey_field_id: field.id).first.response.should eq "1234567890"
   end
   it "should not create a FieldResponse if given an invalid phone number response" do
   	survey = SurveyTemplate.create
-    field = survey.email_fields.build(:question_title => "Phone Number:")
+    field = PhoneField.create(:question_title => "Phone Number2:")
+    survey.survey_fields << field
     submis = survey.submissions.build()
+    submis.save
     response = field.field_responses.build(:response => "saasbook")
     submis.field_responses << response
-    submis.save
-    submis.field_responses.should be_empty
+    expect {response.save!}.to raise_error(ActiveRecord::RecordInvalid,'Validation failed: Phone is not a valid phone number')
   end
   it "should create a FieldResponse for a valid text question response" do
     survey = SurveyTemplate.create
-    field = survey.text_question_fields.build(:question_title => "Do you like ponies:")
+    field = TextQuestionField.create(:question_title => "Do you like ponies:")
+    survey.survey_fields << field
     submis = survey.submissions.build()
     response = field.field_responses.build(:response => "frootloops")
     submis.field_responses << response
     submis.save
-    submis.field_responses.where(survey_field_id: field.id).first.response.should eq "frootloops"
+    Submission.find(submis.id).field_responses.where(survey_field_id: field.id).first.response.should eq "frootloops"
   end
-=======
-  it 'must be a valid phone number' 
-
->>>>>>> f3eec3dc27937d785900b61cc7b181741f45289a
 end

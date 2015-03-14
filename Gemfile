@@ -33,7 +33,3 @@ gem 'haml-rails'
 gem 'validates_as_phone_number', '~> 0.7.5'
 gem 'devise'
 gem 'email_validator', '~> 1.5.0'
-<<<<<<< HEAD
-=======
-
->>>>>>> f3eec3dc27937d785900b61cc7b181741f45289a
