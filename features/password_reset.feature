@@ -14,12 +14,12 @@ Background:
 
 Scenario: Volunteers should be able to find the password reset page.
     Given I am on the volunteer login page
-    And I follow "Forgot your password?"
+    And I follow "Forgot password?"
     Then I should be redirected to the password reset page
 
 Scenario: Admins should be able to find the password reset page.
     Given I am on the admin login page
-    And I follow "Forgot your password?"
+    And I follow "Forgot password?"
     Then I should be redirected to the password reset page
 
 Scenario: If I enter an valid email, I should get a confirmation email

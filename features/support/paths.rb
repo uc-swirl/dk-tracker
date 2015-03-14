@@ -16,13 +16,13 @@ module NavigationHelpers
 
     when /^the admin dashboard$/ then dashboard_path
 
-    when /^admin login$/ then dashboard_login_path
+    when /^admin login$/ then new_user_session_path
 
-    when /^the admin login page$/ then dashboard_login_path
+    when /^the admin login page$/ then new_user_session_path
 
-    when /^volunteer login$/ then volunteer_login_path
+    when /^volunteer login$/ then new_user_session_path
 
-    when /^the volunteer login page$/ then volunteer_login_path
+    when /^the volunteer login page$/ then new_user_session_path
 
 
     when /^the volunteer dashboard$/ then volunteer_path

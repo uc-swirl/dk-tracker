@@ -18,7 +18,7 @@ Feature: Admin Dashboard
     Given I am on the admin login page
     Given I have logged in as alex@incredible.com with password password123
     Given I am on the admin dashboard
-    Then I should be redirected to admin login
+    Then I should be redirected to the volunteer page
 
   Scenario: I should see links to available admin actions.
     Given I am on the admin login page

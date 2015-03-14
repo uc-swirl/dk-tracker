@@ -1,4 +1,4 @@
-Swirlysurvey::Application.routes.draw do
+  Swirlysurvey::Application.routes.draw do
   
   devise_for :users
 
@@ -6,8 +6,10 @@ Swirlysurvey::Application.routes.draw do
   # first created -> highest priority.
 
   root :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
+  
   resources :survey_templates
   resources :submissions
+
   devise_scope :user do
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
