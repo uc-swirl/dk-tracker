@@ -25,14 +25,14 @@ Scenario: Admins should be able to find the password reset page.
 Scenario: If I enter an valid email, I should get a confirmation email
     Given I am on the password reset page
     And I fill in "user_email" with "alex@incredible.com"
-   	Then I press "Send me reset password instructions"
+   	Then I press "Reset Password"
    	Then an email should be sent
 
 
 Scenario: If I enter an invalid email, I should get a notice
     Given I am on the password reset page
     And I fill in "user_email" with "asd@asd.com"
-   	Then I press "Send me reset password instructions"
+   	Then I press "Reset Password"
    	Then I should see "Email not found"
 
 
