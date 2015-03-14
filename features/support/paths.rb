@@ -26,6 +26,10 @@ module NavigationHelpers
 
 
     when /^the volunteer dashboard$/ then volunteer_path
+
+    when /^the password reset page$/ then new_user_password_path
+
+      
 		
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
