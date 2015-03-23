@@ -1,19 +1,20 @@
   Swirlysurvey::Application.routes.draw do
   
-  devise_for :users
+  # devise_for :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  # root :to => "experiments#index", :format => false
   root :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
   
   resources :survey_templates
   resources :submissions
 
-  devise_scope :user do
-    get "/login" => "devise/sessions#new"
-    get "/logout" => "devise/sessions#destroy"
-  end
+  # devise_scope :user do
+  #   get "/login" => "devise/sessions#new"
+  #   get "/logout" => "devise/sessions#destroy"
+  # end
 
   match 'volunteer', :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
 
@@ -25,6 +26,13 @@
   match 'admin/create_user', :to => 'dashboard#create_user', :format => false, :as => :admin_create_user
 
   match 'admin/login', :to => 'dashboard#login', :format => false, :as => :dashboard_login
+
+
+# kind of placeholder-ing 
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'logout', to: 'sessions#destroy', as: 'signout'
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

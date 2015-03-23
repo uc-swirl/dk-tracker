@@ -1,8 +1,8 @@
 class VolunteerDashboardController < ApplicationController
     before_filter :authorize, :except => [:login]
     def authorize
-      if not(user_signed_in?)
-        redirect_to new_user_session_path
+      if not(current_user)
+        redirect_to volunteer_login_path
       end
     end
 

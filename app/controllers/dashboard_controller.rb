@@ -1,10 +1,13 @@
 class DashboardController < ApplicationController
     before_filter :authorize, :except => [:login]
+
     def authorize
-      if not(current_user.try(:admin?))
-        redirect_to new_user_session_path
+      if not(current_user)
+        redirect_to dashboard_login_path
       end
     end
+
+
 
     def add_user
 

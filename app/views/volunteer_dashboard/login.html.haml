@@ -1,15 +1,23 @@
 %span=flash[:notice]
-%h1 Volunteers Login Here
+%h1 Students Login Here
 
-= form_tag session_path(:user) do
-  %ul{:style => "list-style-type:none"}
-    %li.required
-      = text_field_tag 'user[email]'
-    %li
-      = password_field_tag 'user[password]'
-    %li
-      = check_box_tag 'user[remember_me]'
-      = label_tag 'user[remember_me]', 'Remember me'
-    %button Sign in
-    %p
-      = link_to "Forgot your password?", new_password_path(:user)
+- if current_user
+  Signed in as <strong> 
+  =current_user.name 
+  </strong>!
+  = link_to "Sign out", signout_path, id: "sign_out"
+- else
+  = link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in"
+
+/ = form_tag session_path(:user) do
+/   %ul{:style => "list-style-type:none"}
+/     %li.required
+/       = text_field_tag 'user[email]'
+/     %li
+/       = password_field_tag 'user[password]'
+/     %li
+/       = check_box_tag 'user[remember_me]'
+/       = label_tag 'user[remember_me]', 'Remember me'
+/     %button Sign in
+/     %p
+/       = link_to "Forgot your password?", new_password_path(:user)
