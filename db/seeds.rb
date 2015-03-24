@@ -12,14 +12,10 @@
 
 
 s = SurveyTemplate.create
-s.text_question_fields.build(:question_title => "Name:")
-s.phone_fields.build(:question_title => "Phone:")
-s.email_fields.build(:question_title => "Email:")
-s.text_question_fields.build(:question_title => "Address:")
-s.text_question_fields.build(:question_title => "City:")
-s.text_question_fields.build(:question_title => "Zip:")
-s.text_question_fields.build(:question_title => "My bus lines:")
-s.text_question_fields.build(:question_title => "Main bus issues:")
+s.text_question_fields.build(:question_title => "Professor:")
+s.text_question_fields.build(:question_title => "Department:")
+s.text_question_fields.build(:question_title => "Course:")
+s.text_question_fields.build(:question_title => "Comments:")
 s.save!
 
 s = SurveyTemplate.create
@@ -27,6 +23,6 @@ s.text_question_fields.build(:question_title => "Favourite colour:")
 s.text_question_fields.build(:question_title => "Speed of a diving swallowtail:")
 s.save!
 
-User.create!(:email => "m.arcojoemontagna@gmail.com", :password => "12345678", :password_confirmation => "12345678", :admin => true)
-User.create!(:email => "m.m999223@gmail.com", :password => "12345678", :password_confirmation => "12345678", :admin => false)
+User.create!(:email => "m.arcojoemontagna@gmail.com", :admin => true)
+User.create!(:email => "m.m999223@gmail.com", :admin => false)
 

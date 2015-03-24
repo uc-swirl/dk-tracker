@@ -1,9 +1,9 @@
 - # in app/views/submissions_controller/index.html.haml
 
-%h1 DK-tracking Form
+%h1 Course evaluataion
 
 %table#movies
-  - if user_signed_in?
+  - if session[:user_id]
     = "Logged in as #{current_user.email}"
     = link_to 'Edit profile', edit_user_registration_path
     = link_to 'Logout', destroy_user_session_path, method: :delete

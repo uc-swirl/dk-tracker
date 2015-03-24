@@ -6,7 +6,9 @@
   # first created -> highest priority.
 
   # root :to => "experiments#index", :format => false
-  root :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
+  # root :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
+  root :to => "dashboard#index", :format => false, :as => :admin
+
   
   resources :survey_templates
   resources :submissions
@@ -16,14 +18,14 @@
   #   get "/logout" => "devise/sessions#destroy"
   # end
 
-  match 'volunteer', :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
+  # match 'volunteer', :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
 
-  match 'volunteer/login', :to => "volunteer_dashboard#login", :format => false, :as => :volunteer_login #perhaps just a placeholder
+  # match 'volunteer/login', :to => "volunteer_dashboard#login", :format => false, :as => :volunteer_login #perhaps just a placeholder
 
 
   match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
   match 'admin/add_user', :to => 'dashboard#add_user', :format => false, :as => :admin_add_user
-  match 'admin/create_user', :to => 'dashboard#create_user', :format => false, :as => :admin_create_user
+  match 'admin/update_permissions', :to => 'dashboard#update_permissions', :format => false, :as => :admin_update_permissions
 
   match 'admin/login', :to => 'dashboard#login', :format => false, :as => :dashboard_login
 

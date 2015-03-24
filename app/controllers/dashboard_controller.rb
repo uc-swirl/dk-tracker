@@ -7,33 +7,36 @@ class DashboardController < ApplicationController
       end
     end
 
-
-
     def add_user
 
     end
 
-    def create_user
-      user = params[:user]
+    def update_permissions
+      permissions = params[:permissions]
+      x = permissions
+      y = permissions[:status]
+      z = params[:permissions][:status]
 
-      created = User.create(:firstname => user[:firstname],
-         :lastname => user[:lastname], 
-         :email => user[:email], 
-         :password => user[:password],
-         :password_confirmation=> user[:password_confirmation],
-         :admin=> user[:admin] == "1"
-
-         )
-      if created.valid?
-        flash[:notice] = "Succesfully added user"
-        return redirect_to dashboard_path
-      else
-        flash[:notice] = "Invalid field"
+      user = User.where(email: permissions[:email]).first
+      if not user
+        flash[:notice] = "Update unsuccessful"
         return redirect_to admin_add_user_path
       end
+      # just giving generalized admin permissions for now
+      if permissions[:status] == "student"
+        user.admin = false
+      else
+        user.admin = true
+      end
+      user.save!
+      
+      flash[:notice] = "Successfully updated user permissions to " + permissions[:status]
+        
+      return redirect_to admin_add_user_path
     end
 
     def index
+
     end
 
     def login

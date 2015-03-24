@@ -4,6 +4,7 @@ describe DashboardController do
     describe "Render the appropriate layouts and templates when logged in" do
       before(:each) do
         OmniAuth.config.test_mode = true
+        
       end
       it 'Index should render the dashboard layout' do
       get :index

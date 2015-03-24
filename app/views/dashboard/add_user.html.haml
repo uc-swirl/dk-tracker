@@ -1,15 +1,16 @@
-%h1 Build me a user worthy of Mordor!
 
-= form_tag admin_create_user_path do
-  = label_tag 'Firstname'
-  = text_field_tag 'user[firstname]'
-  = label_tag 'lastname'
-  = text_field_tag 'user[lastname]'
-  = label_tag 'Email'
-  = text_field_tag 'user[email]'
-  = label_tag 'Admin?'
-  = check_box_tag 'user[admin]'
-  = label_tag 'password'
-  = text_field_tag 'user[password]'
+%h1 Set permissions
 
-  %button Create
+= form_tag admin_update_permissions_path do
+  = label :permissions, "email", "Email:"
+  = text_field :permissions, "email"
+  = label :permissions, "status", "student"
+  = radio_button :permissions, "status", "student"
+  = label :permissions, "status", "HKN admin"
+  = radio_button :permissions, "status", "HKN admin"
+  = label :permissions, "status", "Professor"
+  = radio_button :permissions, "status", "Professor" 
+  = label :permissions, "status", "TA" 
+  = radio_button :permissions, "status", "TA"
+
+  = submit_tag 'Submit'
