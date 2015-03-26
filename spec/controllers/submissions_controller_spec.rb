@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe SubmissionsController do
+  before(:each) do
+    @user = User.create()
+    session[:user_id] = @user.id     
+  end
   it 'adds a submission to the submissions table' do
     st = SurveyTemplate.create
     f1 = st.text_question_fields.build(:question_title => "Poodles?") 

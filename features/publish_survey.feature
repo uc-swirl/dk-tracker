@@ -20,4 +20,4 @@ Scenario:
 Given I am a student
 And a survey is published
 When I go to that survey's page
-I should see the survey title
+Then I should see the survey title

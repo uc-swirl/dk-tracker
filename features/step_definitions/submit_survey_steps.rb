@@ -38,9 +38,3 @@ end
 Given(/^I press submit$/) do
   click_button("survey_submit")
 end
-
-
-
-
-
-

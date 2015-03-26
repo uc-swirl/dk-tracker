@@ -7,7 +7,7 @@
 
   # root :to => "experiments#index", :format => false
   # root :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
-  root :to => "dashboard#index", :format => false, :as => :admin
+  root :to => "survey_templates#index", :format => false
 
   
   resources :survey_templates
@@ -21,21 +21,19 @@
   # match 'volunteer', :to => "volunteer_dashboard#index", :format => false, :as => :volunteer #perhaps just a placeholder
 
   # match 'volunteer/login', :to => "volunteer_dashboard#login", :format => false, :as => :volunteer_login #perhaps just a placeholder
-
+  match 'survey/login', :to => "survey_templates#login", :format => false, :as => :survey_login
 
   match 'admin', :to => 'dashboard#index', :format => false, :as => :dashboard
   match 'admin/add_user', :to => 'dashboard#add_user', :format => false, :as => :admin_add_user
   match 'admin/update_permissions', :to => 'dashboard#update_permissions', :format => false, :as => :admin_update_permissions
 
   match 'admin/login', :to => 'dashboard#login', :format => false, :as => :dashboard_login
+  match 'student/login', :to => 'student#login', :format => false, :as => :student_login
 
-
-# kind of placeholder-ing 
+  # kind of placeholder-ing 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'logout', to: 'sessions#destroy', as: 'signout'
-
-
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

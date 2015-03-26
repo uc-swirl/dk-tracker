@@ -5,6 +5,11 @@ class SubmissionsController < ApplicationController
   end
   def create
     template = SurveyTemplate.find(params[:template_id])
+    user = User.find(session[:user_id])
+    template.student_responses.build(:email => user.email)
+    template.save
+
+
     begin
       #template = Template.find(params[:template_id])
       submission = template.submissions.create!

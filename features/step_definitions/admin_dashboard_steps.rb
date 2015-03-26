@@ -9,17 +9,15 @@ end
 
 Given /the following users exist/ do |user_table|
   user_table.hashes.each do |user|
-    #    | firstname | lastname    | phone_number   | email               | admin | password |
-    user[:admin] = user[:admin] == "true"
-    user[:password_confirmation] = user[:password]
-    User.create!(user)
+    #    | firstname | lastname    | phone_number   | email               | admin |
+    #user[:admin] = user[:admin] == "true"
+    #user[:password_confirmation] = user[:password]
+    User.create!(:admin => user[:admin], :firstname => user[:firstname], :lastname => user[:lastname], :email => user[:email])
   end
 end
 
-Given /^(?:|I )have logged in as (.+) with password (.+)$/ do |email, password|
-  fill_in("user_email", :with => email)
-  fill_in("user_password", :with => password)
-  click_button("Sign in")
+Given /^(?:|I )have logged in as (.+)$/ do |email|
+  visit "/auth/google_oauth2"
 end
 
 Then /^there should be some links to admin actions$/ do

@@ -1,0 +1,12 @@
+%span=flash[:notice]
+%h1 Students Login Here
+
+- if current_user
+  Signed in as <strong> 
+  =current_user.name 
+  </strong>!
+  = link_to "Sign out", signout_path, id: "sign_out"
+- elsif params[:template_id] != nil
+  = link_to "Sign in with Google", "/auth/google_oauth2?template_id="+params[:template_id], id: "sign_in"
+- else
+  = link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in"

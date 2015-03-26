@@ -1,4 +1,4 @@
-%h1 DK-tracking Form
+%h1 Course Evaluation forms
 
 %table#forms
   %thead
@@ -7,5 +7,5 @@
   %tbody
     - @templates.each do |template|
       %tr
-        %td= link_to "Template" + template.id.to_s, survey_template_path(template)
+        %td= link_to "Template " + template.id.to_s, survey_template_path(template)
 
